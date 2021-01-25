@@ -6,5 +6,59 @@
 }
 .container{
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
+}
+.clearfix:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* --- Proprietà header --- */
+header{
+  min-height: 100px;
+  background-color: pink;
+}
+  /* --- Uso header.container per evitare conflitti di importanza sul margine inferiore (avrei pututo usare anche "header, main, footer" al posto di .container oppure !important nella proprietà) --- */
+header.container, .jumbo{
+    margin-bottom: 30px;
+}
+
+/* --- Proprietà main --- */
+.jumbo{
+  min-height: 300px;
+  background-color: gold;
+}
+  /* --- Riga contenente i float element */
+.row{
+  min-height: 30px;
+  background-color: dodgerblue;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
+  /* --- Proprietà generiche figli di row e specifiche h1 ---  */
+.row > *{
+  background-color: lightblue;
+}
+.row > h1{
+  min-height: 70px;
+  margin-bottom: 20px;
+}
+  /* --- Elementi float --- */
+.aside, .center{
+  float: left;
+  min-height: 300px;
+}
+.aside{
+  width: 20%;
+}
+.center{
+  width: 56%;
+  margin: 0 2%;
+}
+
+/*  --- Proprietà footer --- */
+footer{
+  min-height: 50px;
+  background-color: purple;
 }
